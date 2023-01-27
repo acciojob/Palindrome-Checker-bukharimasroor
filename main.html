@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-
+<!DOCTYPE html>
 <html>
-
-<head>
-	<link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">function isPalindrome(str) {
-  str = str.toLowerCase();
-  return str === str.split('').reverse().join('');
-}
-
-   </script>
-
-</body>
-
+  <head>
+    <title>Palindrome Checker</title>
+  </head>
+  <body>
+    <form>
+      <label for="input">Enter a word or sentence:</label>
+      <input type="text" id="input" name="input">
+      <button type="button" onclick="checkPalindrome()">Check</button>
+    </form>
+    <p id="result"></p>
+    <script>
+      function checkPalindrome() {
+        var input = document.getElementById("input").value;
+        input = input.toLowerCase();
+        if (input === input.split('').reverse().join('')) {
+          document.getElementById("result").innerHTML = input + " is a palindrome!";
+        } else {
+          document.getElementById("result").innerHTML = input + " is not a palindrome.";
+        }
+      }
+    </script>
+  </body>
 </html>
+
